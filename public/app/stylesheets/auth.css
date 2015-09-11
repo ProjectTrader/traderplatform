@@ -1,0 +1,10 @@
+#ninja-tall {
+  display: block;
+  margin: auto;  
+  max-width: 30%;
+}
+
+#instruction {
+  text-align: center;
+  padding: 10px;
+}

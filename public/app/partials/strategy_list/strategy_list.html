@@ -1,0 +1,81 @@
+<div id="group-list-wrapper">
+
+  <button type="button"  class="btn btn-default pull-left" id="newStrategyButton"
+  data-toggle="modal" data-target="#new-group-modal">New Strategy</button>
+
+  <div ng-repeat="strategy in strategyList" ng-click="showStrategy(strategy._id)" class="strategy-panel">
+
+    <div data-id="{{strategy._id}}"
+        class="panel panel-default col-md-2 margin-left-1 strategy-container"
+        ng-mouseover="showButtons=true"
+        ng-mouseleave="showButtons=false"
+        ng-init="showButtons=false;",
+        ng-class="{activegroup: showButtons}"
+       >
+      <div><!-- start group -->
+
+
+        <div class="groups-toolbar" ng-show="showButtons">
+          <button ng-click="shareGroup(group)"
+                  class="groups-toolbar-share-btn btn btn-fab
+                  btn-fab-mini btn-raised btn-material-light-blue">
+          <i class="mdi-social-share"></i></button>
+
+          <button ng-show="!strategy.defaultGroup" ng-click="deleteGroup($event, group);"
+                  class="groups-toolbar-paste-btn btn btn-fab btn-fab-mini btn-raised btn-danger">
+
+          <i class="mdi-action-delete"></i></button>
+        </div>
+        <img class="strategy-image" ng-src="{{strategy.image_url}}" ng-show='true'>
+      </div>
+      <div class="panel-body">
+          <div>{{strategy.market.name}}</div>
+          <div>{{strategy.description}}</div>
+
+      <hr>
+      </div>
+      <div class="panel-header">
+        <div class="strategy-header">
+          <div class="alert alert-success hide" role="alert" id="alert-success-{{strategy._id}}">New Snippet Created!</div>
+          {{strategy.name}}
+          <span class="pull-right">
+             <div ng-controller="RatingCtrl">
+                 <span class="rating-header">Rating</span>
+                 <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" ></rating>
+             </div>
+
+          </span>
+        </div>
+      </div>
+    </div><!-- end group -->
+  </div>
+</div>
+
+<div id="new-strategy-modal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="centered modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title">Create a group</h2>
+      </div>
+      <div class="new-strategy-inputs">
+        <input id="name_box" type="text" ng-model="formGroup.name" class="form-control floating-label" placeholder="Title"/>
+        <br>
+        <br>
+        <textarea id="description_box" class="form-control floating-label" ng-model="formGroup.description" placeholder="Description"></textarea>
+        <br>
+        <br>
+        <input id="image_url_box" type="text" ng-model="image_url" class="form-control floating-label"
+        data-hint="A thumbnail will be generated" placeholder="Image url"/>
+      </div>
+
+      <div class="modal-footer">
+        <div class="centered">
+          <button ng-click="createStrategy()" class="input-center btn btn-default" data-dismiss="modal">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

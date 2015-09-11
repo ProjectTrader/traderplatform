@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TraderPlatform Test</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+  var json = {content:"random", user: "54ff5c703898ea1c7445dcae", unique_handle: "handle_1", tags: ['1','2']};
+  $.post('/api/users/54ff5c703898ea1c7445dcae/snippets', json).done(
+      function(){
+        console.log("Success");
+      }
+
+    )
+    .fail(
+      function(){
+        console.log("Failed");
+      }
+
+    );
+
+
+
+</script>
+</body>
+
+</html>

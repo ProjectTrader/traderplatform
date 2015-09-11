@@ -1,0 +1,29 @@
+<div class="row profile margin-left-10" ng-controller="ProfileController">
+
+	<div class="row">
+		<h3>Account Details</h3>
+	</div>
+		<div class="row">
+			<div><h4>User Name</h4></div>
+			<div ng-bind="user.username"></div>
+		</div>
+		<div class="row">
+			<div><h4>Email</h4></div><div ng-bind="user.email">{{user.email}}</div>
+		</div>
+		<div class="row">
+			<div><h4>Account Type</h4></div>
+			<div ng-show="user.githubId">GitHub</div>
+			<div ng-hide="user.githubId">Local</div>
+		</div>
+
+		<div class="row">
+			<div><h4>Client Token</h4></div>
+			<div ng-bind="user._id"></div>
+
+		</div>
+
+
+		<!--<a class="btn btn-active" ng-href="/#/user/{{userProfile._id}}/edit">Update Profile</a>-->
+</div>
+
+

@@ -1,0 +1,19 @@
+<div id="strategy-container"></div>
+<script>
+    var chart1; // globally available
+    $(function() {
+        chart1 = new Highcharts.StockChart({
+            chart: {
+                renderTo: 'strategy-container'
+            },
+            rangeSelector: {
+                selected: 1
+            },
+            series: [{
+                name: 'USD to EUR',
+                data: [55,56,57,66,65,44,43,34,67,1] // predefined JavaScript array
+            }]
+        });
+    });
+
+</script>

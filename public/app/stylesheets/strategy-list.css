@@ -1,0 +1,60 @@
+#stragegy-list-wrapper {
+  max-width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stragegy-container {
+  padding: 0;
+  width: 224px;
+
+}
+
+.stragegy-panel{
+  position: absolute;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  /* initially should be hidden - js will reposition*/
+  left: -1000px;
+}
+
+.stragegy-header {
+  margin: 10px;
+  padding: 0;
+  text-align: center;
+}
+
+.stragegy-button-stragegy {
+
+}
+
+.strategy-image {
+  padding: 0 !important;
+  width: 100%; /*224px;*/
+  height: 100%;
+  margin-left: 0 !important;
+}
+
+.strategies-toolbar {
+  position: absolute;
+  width:80%;
+}
+
+.strategies-toolbar-paste-btn {
+  text-align: right;
+  float: right;
+  z-index: 10000;
+  font-size: 30px;
+  font-weight: 400;
+  left: 30px;
+  top: 10px;
+}
+
+.strategies-toolbar-share-btn {
+  top: 9px;
+  left: 10px;
+}
